@@ -1,15 +1,15 @@
 # MAB (Multi-Armed Bandit)
 
-개인화 추천 기술 : 개인마다 각 콘텐츠에 기대할 수 있는 클릭률을 계산하고 그 확률이 가장 높은 콘텐츠를 맞춤형으로 제시해주는 것을 말합니다.
+**개인화 추천 기술** : 개인마다 각 콘텐츠에 기대할 수 있는 클릭률을 계산하고 그 확률이 가장 높은 콘텐츠를 맞춤형으로 제시해주는 것을 말합니다.
 
 ### MAB란 ?
 강화 학습 문제의 일종으로, 보상을 알 수 없는 K개의 선택지가 존재할 때 탐색 (Exploration)과 활용 (Exploitation)을 적절히 조절하여 최종 보상의 총합을 최대화하는 문제입니다.
 \
 따라서 MAB의 최종 목표는 "어떤 정책 (Policy)를 통해 최대의 보상 (reward)을 얻을 것인가" 라고 할 수 있습니다 :)
 
-이때 **탐색 (Exploration)**은 사용자에게 어떤 콘텐츠를 추천할지 탐색하기 위해 새로운 콘텐츠를 추천해주고 피드백을 수집하는 과정을 의미합니다.
+이때 **탐색 (Exploration)** 은 사용자에게 어떤 콘텐츠를 추천할지 탐색하기 위해 새로운 콘텐츠를 추천해주고 피드백을 수집하는 과정을 의미합니다.
 
-**활용 (Exploitation)**은 피드백을 바탕으로 사용자가 좋아할 것으로 예상되는 콘텐츠를 추천해주는 과정을 의미합니다.
+**활용 (Exploitation)** 은 피드백을 바탕으로 사용자가 좋아할 것으로 예상되는 콘텐츠를 추천해주는 과정을 의미합니다.
 
 
 # MAB의 기본적인 수식
@@ -42,7 +42,7 @@
 
 **U자 형태** : exploration과 exploitation이 적절히 trade-off 되는 시점을 찾아야 하는 과제.
 
-#### **1) Greedy Algorithm **
+#### **1) Greedy Algorithm**
 
 <img width="838" alt="2" src="https://github.com/DEVOCEAN-YOUNG-DEVSHIP/recsys-study/assets/132445323/0084c81e-d2a2-46ea-baa0-59aa435447c5">
 
@@ -50,7 +50,7 @@
 - Qt(a)가 계속 업데이트되다가 평균 reward가 최대인 action을 선택합니다.
 - 처음에 선택되는 action이 계속 높은 reward를 주다가 우연히 낮은 reward를 준다면 그 action의 reward 평균이 낮아져 다시는 선택되지 않는다는 문제점이 있습니다.
 
-#### **2) ε-greedy Algorithm **
+#### **2) ε-greedy Algorithm**
 
 <img width="867" alt="3" src="https://github.com/DEVOCEAN-YOUNG-DEVSHIP/recsys-study/assets/132445323/15026133-9319-405d-94d0-228c39f06f00">
 
@@ -58,7 +58,7 @@
 - 각 대상이 공평한 기회를 얻고 간단한 방식으로 속도를 빠르게 낼 수 있습니다.
 - 탐색을 위해 ε 만큼의 리소스가 소모되며 데이터가 많이 쌓여 true distribution을 측정했다하더라도 계속해서 ε의 확률로 랜덤하게 선택하기 때문에 후반에는 손해를 보게 된다는 문제점이 있습니다.
 
-#### **3) UCB (Upper Confidence Bound) Algorithm **
+#### **3) UCB (Upper Confidence Bound) Algorithm**
 
 <img width="805" alt="4" src="https://github.com/DEVOCEAN-YOUNG-DEVSHIP/recsys-study/assets/132445323/e7ff24d0-8141-485e-9a34-c7b58625c9da">
 
@@ -66,7 +66,7 @@
 - 자연스럽게 exploration 에서 exploitation으로 policy 변화를 이끌 수 있습니다.
 - 계산이 까다로워 연산 비용이 크고, 연산 이후 최고의 조건에서 활용이 이루어져 환경적 요인이 반영되기 어렵다는 문제점이 있습니다.
 
-#### **4) Thompson Sampling **
+#### **4) Thompson Sampling**
 
 ![6](https://github.com/DEVOCEAN-YOUNG-DEVSHIP/recsys-study/assets/132445323/95dba8bb-6b3a-48ad-b41e-0e7655781c6c)
 
@@ -79,7 +79,7 @@
 
 # 카카오의 사례 - 토픽 모델링과 MAB를 통한 추천 시스템
 
-#### ** 추천이 나가기 전 **
+#### **추천이 나가기 전**
 
 ![7](https://github.com/DEVOCEAN-YOUNG-DEVSHIP/recsys-study/assets/132445323/cbfea69f-e3fe-47e7-a60c-4d3167c36319)
 
@@ -93,14 +93,14 @@
 * 사용자의 주제 벡터가 [0.06, 0.10, 0.84]로 구성. (사용자는 육류에 가장 관심을 가지고 있음)
 * 그와 동시에 각 주제에 해당하는 MAB에서는 모든 아이템에 대해 각 주제에 맞는 추천 점수를 가집니다.
 
-#### ** 추천 요청이 들어올 경우 **
+#### **추천 요청이 들어올 경우**
 
 ![8](https://github.com/DEVOCEAN-YOUNG-DEVSHIP/recsys-study/assets/132445323/0abd82d6-0737-4639-951b-3ff8e7dfc4c8)
 
 * 주제별 MAB들의 추천 점수를 사용자의 주제 벡터에 맞게 가중 평균하여 계산합니다.
 * 이때, 사용자의 취향이 '육류'에 치우쳐 있다면, 추천 결과 또한 '육류' MAB의 추천 결과에 가중하여 전달할 것입니다.
 
-#### ** 피드백을 통한 실시간 최적화 **
+#### **피드백을 통한 실시간 최적화**
 
 * 추천이 나갈 때와 유사하게 피드백 또한 주제별로 속할 확률을 바탕으로 각 MAB에 피드백을 나누어서 전달합니다.
-    * 피드백에 해당하는 추천이 ‘패스트 푸드’라는 주제에 집중했던 추천이라면, 해당 추천의 피드백 또한 ‘패스트푸드’의 MAB에 집중되어 전달되는 것입니다 !
+    * 피드백에 해당하는 추천이 ‘패스트 푸드’라는 주제에 집중했던 추천이라면, 해당 추천의 피드백 또한 ‘패스트푸드’의 MAB에 집중되어 전달됩니다 !
