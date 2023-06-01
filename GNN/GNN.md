@@ -147,7 +147,7 @@ Node embedding을 통해 점들을 분류하는 문제를 해결할 수 있다. 
 * [PinnerSage(Multi-modal user embedding framework for recommendations at pinterest) 요약 설명](https://greeksharifa.github.io/paper_review/2022/08/19/PinnerSage/)
 
 #### node2vec
-[node2vec: Scalable Feature Learning for Networks](https://arxiv.org/abs/1607.00653)
+* [node2vec: Scalable Feature Learning for Networks](https://arxiv.org/abs/1607.00653)
 #### Graph Convolutional Matrix Completion
 : 유저-영화 평점 행렬이 있을 때 기존 평점을 기반으로 message passing function을 사용해서 아직 평가가 없는 유저-영화 쌍의 예상 평점을 계산
 * [R. van den Berg, T. N. Kipf, and M. Welling, “Graph Convolutional Matrix Completion”, arXiv:1706.02263](https://arxiv.org/abs/1706.02263)
