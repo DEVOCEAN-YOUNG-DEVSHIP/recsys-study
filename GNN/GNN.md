@@ -26,7 +26,7 @@
 * Laplacian matrix
 
 ### 그래프를 분석하기 어려운 이유
-1. 그래프는 유클리드 공간에 있지 않음
+1. 그래프는 **유클리드 공간에 있지 않음**
    * 좌표계로 매핑하기 어려워 해석이 비교적 어려움
 2. 고정된 형태가 아님
    * 같은 인접 행렬로 표현된다고 해도 다르게 생길 수 있음
@@ -73,8 +73,8 @@ Vanilla GNN에서 소개된 Recurrent Graph Neural Network의 경우 Banach Fixe
 
 #### Graph Convolution Network
 일반적으로 CNN에서 Convolution Filter를 사용하는 이유는 다음과 같다.
-1. 전체 데이터에서 local feature를 뽑아내는데 유용하다.
-2. Filter들이 Spatial location에 따라서 변하지 않는다.
+1. 전체 데이터에서 **local feature**를 뽑아내는데 유용하다.
+2. Filter들이 **Spatial location에 따라서 변하지 않는다.**
 
 이러한 장점들을 graph에도 적용하여 하나의 노드와 인접 노드와의 관계를 계산하는 목적으로 고안되었다. 그러나 graph에서 convolution을 적용하기엔 몇가지 문제가 존재한다.
 1. Convolution은 Regular Grid에 정의된다.
@@ -95,11 +95,11 @@ Spectral Convolution Network는 Fourier Transform의 개념을 활용한다.
 </p>
 
 한 Domain의 Convolution은 다른 Domain의 point-wise multiplication과 같다.
-따라서 Graph domain의 convolution은 Fourier domain의 point-wise multiplication과 같다. 또한 convolution의 Laplace 변환은 point-wise multiplication으로 변한다. 
+따라서 **Graph domain의 convolution은 Fourier domain의 point-wise multiplication**과 같다. 또한 **convolution의 Laplace 변환은 point-wise multiplication**으로 변한다. 
 
-* GFT -> Filtering -> IGFT = Laplacian Matrix
+* GFT ➡️ Filtering ➡️ IGFT = Laplacian Matrix
 
-Graph에서 Fourier transform이란 Graph signal을 frequency 별로 분해하는 과정이라고 생각하면 된다. Graph signal을 feature라 했을 때 frequency는 feature 간의 차이라고 볼 수 있다. 따라서 변환 후 feature 간 차이를 계산했을 때 그 값이 크지 않은 쪽으로 filtering 하는 것이 목표라 할 수 있다.
+Graph에서 Fourier transform이란 Graph signal을 frequency 별로 분해하는 과정이라고 생각하면 된다. **Graph signal을 feature**라 했을 때 **frequency는 feature 간의 차이**라고 볼 수 있다. 따라서 변환 후 **feature 간 차이를 계산했을 때 그 값이 크지 않은 쪽으로 filtering** 하는 것이 목표라 할 수 있다.
 
 Spectral Convolutional Network은 graph signal에서 noise를 제거하기 위해 frequency의 spectrum에서 원하는 frequency를 filtering 한다.
 
@@ -123,13 +123,11 @@ Node embedding을 통해 점들을 분류하는 문제를 해결할 수 있다. 
 
 
 ### 추천 논문 및 자료
-#### Graph Convolutional Matrix Completion
-: 유저-영화 평점 행렬이 있을 때 기존 평점을 기반으로 message passing function을 사용해서 아직 평가가 없는 유저-영화 쌍의 예상 평점을 계산
-* [R. van den Berg, T. N. Kipf, and M. Welling, “Graph Convolutional Matrix Completion”, arXiv:1706.02263](https://arxiv.org/abs/1706.02263)
+#### GCN
+[Semi-Supervised Classification with Graph Convolutional Networks](https://arxiv.org/abs/1609.02907)
 
-#### KGAT(Knowledge Graph Attention Network)
-* [KGAT: Knowledge Graph Attention Network for Recommendation](https://arxiv.org/abs/1905.07854)
-* [KGAT paper review(kor)](https://www.youtube.com/watch?v=I4mt5bP-IcQ)
+#### LightGCN
+* [LightGCN: Simplifying and Powering Graph Convolution Network for Recommendation](https://arxiv.org/abs/2002.02126)
 
 #### GraphSAGE
 * [Inductive Representation Learning on Large Graphs
@@ -148,8 +146,13 @@ Node embedding을 통해 점들을 분류하는 문제를 해결할 수 있다. 
 * [PinnerSage: Multi-Modal User Embedding Framework for Recommendations at Pinterest](https://arxiv.org/abs/2007.03634)
 * [PinnerSage(Multi-modal user embedding framework for recommendations at pinterest) 요약 설명](https://greeksharifa.github.io/paper_review/2022/08/19/PinnerSage/)
 
-#### LightGCN
-* [LightGCN: Simplifying and Powering Graph Convolution Network for Recommendation](https://arxiv.org/abs/2002.02126)
+#### Graph Convolutional Matrix Completion
+: 유저-영화 평점 행렬이 있을 때 기존 평점을 기반으로 message passing function을 사용해서 아직 평가가 없는 유저-영화 쌍의 예상 평점을 계산
+* [R. van den Berg, T. N. Kipf, and M. Welling, “Graph Convolutional Matrix Completion”, arXiv:1706.02263](https://arxiv.org/abs/1706.02263)
+
+#### KGAT(Knowledge Graph Attention Network)
+* [KGAT: Knowledge Graph Attention Network for Recommendation](https://arxiv.org/abs/1905.07854)
+* [KGAT paper review(kor)](https://www.youtube.com/watch?v=I4mt5bP-IcQ)
 
 #### NAVER DEVIEW 2021 
 * [Knowledge Graph에게 맛집과 사용자를 묻는다. : GNN으로 맛집 취향 저격 하기!](https://deview.kr/2021/sessions/437)
