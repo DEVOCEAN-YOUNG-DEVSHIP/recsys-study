@@ -12,9 +12,9 @@ DEVOCEAN에 추천시스템 구축을 위한 목적으로 진행되는 스터디
 앞으로 진행할 스터디 주제들은 다음과 같습니다.
 |**Title**|**Presenter**|
 |-|-|
-|🌊 **추천시스템 기초**|[반민정](https://github.com/dododadadada)|
-|🌊 **MAB**|[김현우](https://github.com/hyunnwoo)|
-|🌊 **GNN**|[정경륜](https://github.com/ryuni-dev)|
+|🌊 [**추천시스템 기초**](recsys-basic/recsys-basic.md)|[반민정](https://github.com/dododadadada)|
+|🌊 [**MAB**](MAB/MAB.md)|[김현우](https://github.com/hyunnwoo)|
+|🌊 [**GNN**](GNN/GNN.md)|[정경륜](https://github.com/ryuni-dev)|
 |🌊 **Session-based recsys**|[이동재](https://github.com/syrius527)|
 
 
