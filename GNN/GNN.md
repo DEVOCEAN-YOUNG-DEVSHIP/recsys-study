@@ -54,7 +54,7 @@ GNN은 이름에서 알 수 있듯이 그래프로 표현할 수 있는 데이�
 > 그래프를 사용한다는 것은 **연결 여부**와 **연결 강도**를 중요하게 보겠다는 점과 같다. 이 연결 관계와 이웃들의 상태를 이용하여 각 점의 상태를 학습한다. 일반적으로 마지막 상태를 `node embedding`이라고 부른다. 
 
 ### 종류
-GNN은 다음과 같은 세 가지로 분류할 수 있다. 
+GNN은 다음과 같이 분류할 수 있다. 
 #### Recurrent Graph Neural Network
 Vanilla GNN에서 소개된 Recurrent Graph Neural Network의 경우 Banach Fixed-Point Theorem을 기초로 만들어졌다.
 > ##### Banach Fixed-Point Theorem
@@ -177,3 +177,5 @@ Node embedding을 통해 점들을 분류하는 문제를 해결할 수 있다. 
 * [GNN 알고리즘 - (2) Spatial Convolutional Network](https://didi-universe.tistory.com/entry/GNN-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-2-Spatial-Convolutional-Network)
 * [Graph Convolutional Network에 대하여 - Spectral Graph Convolution](https://ralasun.github.io/deep%20learning/2021/02/15/gcn/)
 * [GCN 기본 개념](https://huidea.tistory.com/301)
+* [Laplace Convolution Theorem](https://stementor.tistory.com/entry/5Laplace-transform5convolution)
+* [Fourier Convolution Theorem](https://supermemi.tistory.com/entry/%ED%91%B8%EB%A6%AC%EC%97%90-%EB%B3%80%ED%99%98%EA%B3%BC-%ED%95%A9%EC%84%B1%EA%B3%B1%EC%9D%98-%EA%B4%80%EA%B3%84Fourier-Transform-Convolution)
